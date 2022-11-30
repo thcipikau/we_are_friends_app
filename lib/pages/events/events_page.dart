@@ -85,15 +85,15 @@ class EventsPage extends GetView<EventsController> {
                         columns: [
                           NsgTableColumn(
                               name: EventFriendTableGenerated.nameFriendId,
-                              width: 100,
+                              width: 200,
                               presentation: 'Друг'),
                           NsgTableColumn(
                               name: EventFriendTableGenerated.nameSumNeeded,
-                              width: 100,
+                              width: 200,
                               presentation: 'Требуется'),
                           NsgTableColumn(
                               name: EventFriendTableGenerated.nameSumAcquired,
-                              width: 100,
+                              width: 200,
                               presentation: 'Сдано')
                         ],
                       ),
