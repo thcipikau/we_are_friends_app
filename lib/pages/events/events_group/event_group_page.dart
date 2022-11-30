@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:nsg_controls/nsg_controls.dart';
 import 'package:we_are_friends_app/model/data_controller_model.dart';
 
-import 'events_group_conroller.dart';
+import 'events_group_controller.dart';
 
 class EventsGroupPage extends GetView<EventGroupController> {
   EventsGroupPage({Key? key}) : super(key: key);
