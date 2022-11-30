@@ -1,7 +1,12 @@
 import 'package:get/get.dart';
+import 'package:we_are_friends_app/pages/events/events_binding.dart';
+import 'package:we_are_friends_app/pages/events/events_group/event_group_page.dart';
+import 'package:we_are_friends_app/pages/events/events_group/events_group_binding.dart';
+import 'package:we_are_friends_app/pages/events/events_group/events_group_list.dart';
 import 'package:we_are_friends_app/pages/events/events_list.dart';
 import 'package:we_are_friends_app/pages/events/events_page.dart';
 import 'package:we_are_friends_app/pages/events/events_page_row.dart';
+import 'package:we_are_friends_app/pages/friends/friends_binding.dart';
 import 'package:we_are_friends_app/pages/friends/friends_list.dart';
 import 'package:we_are_friends_app/pages/friends/friends_page.dart';
 
@@ -26,27 +31,37 @@ class AppPages {
     GetPage(
       name: Routes.friendsList,
       page: () => const FriendsListPage(),
-      //binding: SplashBinding(),
+      binding: FriendsBinding(),
     ),
     GetPage(
       name: Routes.friendsPage,
       page: () => FriendsPage(),
-      //binding: SplashBinding(),
+      binding: FriendsBinding(),
     ),
     GetPage(
       name: Routes.eventsListPage,
       page: () => const EventsListPage(),
-      //binding: SplashBinding(),
+      binding: EventsBinding(),
     ),
     GetPage(
       name: Routes.eventsPage,
       page: () => EventsPage(),
-      //binding: SplashBinding(),
+      binding: EventsBinding(),
     ),
     GetPage(
       name: Routes.eventsPageRow,
       page: () => EventsPageRow(),
-      //binding: SplashBinding(),
+      binding: EventsBinding(),
+    ),
+    GetPage(
+      name: Routes.eventsGroupListPage,
+      page: () => const EventsGroupListPage(),
+      binding: EventsGroupBinding(),
+    ),
+    GetPage(
+      name: Routes.eventsGroupPage,
+      page: () => EventsGroupPage(),
+      binding: EventsGroupBinding(),
     ),
   ];
 }
@@ -59,4 +74,6 @@ abstract class Routes {
   static const eventsListPage = '/events_list';
   static const eventsPage = '/events_page';
   static const eventsPageRow = '/events_page_row';
+  static const eventsGroupListPage = '/events_group_list';
+  static const eventsGroupPage = '/events_group_page';
 }

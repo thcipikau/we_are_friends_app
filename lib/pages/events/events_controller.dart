@@ -5,6 +5,11 @@ import 'package:we_are_friends_app/model/data_controller_model.dart';
 import 'package:we_are_friends_app/model/event_friend_table.dart';
 
 class EventsController extends NsgDataController<Event> {
+  EventsController()
+      : super(
+            controllerMode: const NsgDataControllerMode(
+                storageType: NsgDataStorageType.local));
+
   @override
   Future<Event> doCreateNewItem() async {
     var el = await super.doCreateNewItem();

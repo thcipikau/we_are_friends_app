@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nsg_controls/nsg_controls.dart';
 import 'package:we_are_friends_app/model/data_controller_model.dart';
+import 'package:we_are_friends_app/pages/events/events_group/events_group_conroller.dart';
 
 import '../../app_pages.dart';
 import 'events_controller.dart';
@@ -9,8 +10,8 @@ import 'events_controller.dart';
 class EventsPage extends GetView<EventsController> {
   EventsPage({Key? key}) : super(key: key);
 
-  final _textTitle = 'Редактирование друга'.toUpperCase();
-  final _textTitleNew = 'Добавление друга'.toUpperCase();
+  final _textTitle = 'Редактирование мероприятие'.toUpperCase();
+  final _textTitleNew = 'Добавление мероприятия'.toUpperCase();
 
   @override
   Widget build(BuildContext context) {
@@ -49,6 +50,25 @@ class EventsPage extends GetView<EventsController> {
                           onClose: (d) {
                             controller.currentItem.date = d;
                           }),
+                      NsgInput(
+                        dataItem: controller.currentItem,
+                        fieldName: EventGenerated.nameName,
+                        label: 'Мероприятие',
+                      ),
+                      NsgInput(
+                        dataItem: controller.currentItem,
+                        fieldName: EventGenerated.nameEventGroupId,
+                        label: 'Группа',
+                        selectionController: Get.put(EventGroupController()),
+                        selectionForm: Routes.eventsGroupListPage,
+                      ),
+                      NsgInput(
+                        dataItem: controller.currentItem,
+                        fieldName: EventGenerated.nameSumNeeded,
+                        minLines: 3,
+                        maxLines: 5,
+                        label: 'Описание',
+                      ),
                       NsgInput(
                         dataItem: controller.currentItem,
                         fieldName: EventGenerated.nameSumNeeded,

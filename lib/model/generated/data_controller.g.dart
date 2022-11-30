@@ -10,34 +10,37 @@ class DataControllerGenerated extends NsgBaseController {
   @override
   Future onInit() async {
     final info = await PackageInfo.fromPlatform();
-    provider ??= NsgDataProvider(applicationName: 'we_are_friends', applicationVersion: info.version, firebaseToken: '');
-  provider!.serverUri = NsgServerOptions.serverUriDataController;
-  
-      NsgDataClient.client
-       .registerDataItem(Friend(), remoteProvider: provider);
-      NsgDataClient.client
-       .registerDataItem(Event(), remoteProvider: provider);
-      NsgDataClient.client
-       .registerDataItem(EventFriendTable(), remoteProvider: provider);
-      NsgDataClient.client
-       .registerDataItem(EventGroup(), remoteProvider: provider);
-      NsgDataClient.client
-       .registerDataItem(PhotoItem(), remoteProvider: provider);
-      NsgDataClient.client
-       .registerDataItem(CostItem(), remoteProvider: provider);
-      NsgDataClient.client
-       .registerDataItem(EventPhotoTable(), remoteProvider: provider);
-      NsgDataClient.client
-       .registerDataItem(EventBudgetTable(), remoteProvider: provider);
-      NsgDataClient.client
-       .registerDataItem(UserSettings(), remoteProvider: provider);
-    provider!.useNsgAuthorization = true;
+    provider ??= NsgDataProvider(
+        applicationName: 'we_are_friends',
+        applicationVersion: info.version,
+        firebaseToken: '');
+    provider!.serverUri = NsgServerOptions.serverUriDataController;
+
+    NsgDataClient.client.registerDataItem(Friend(), remoteProvider: provider);
+    NsgDataClient.client.registerDataItem(Event(), remoteProvider: provider);
+    NsgDataClient.client
+        .registerDataItem(EventFriendTable(), remoteProvider: provider);
+    NsgDataClient.client
+        .registerDataItem(EventGroup(), remoteProvider: provider);
+    NsgDataClient.client
+        .registerDataItem(PhotoItem(), remoteProvider: provider);
+    NsgDataClient.client.registerDataItem(CostItem(), remoteProvider: provider);
+    NsgDataClient.client
+        .registerDataItem(EventPhotoTable(), remoteProvider: provider);
+    NsgDataClient.client
+        .registerDataItem(EventBudgetTable(), remoteProvider: provider);
+    NsgDataClient.client
+        .registerDataItem(UserSettings(), remoteProvider: provider);
+    provider!.useNsgAuthorization = false;
+    provider!.token = '66666666666';
+    provider!.isAnonymous = false;
     var db = NsgLocalDb.instance;
     await db.init('we_are_friends');
     await provider!.connect(this);
-    
+
     super.onInit();
   }
+
   @override
   Future loadProviderData() async {
     currentStatus = RxStatus.success();

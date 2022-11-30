@@ -4,6 +4,7 @@
     "cSharpNamespace": "WeAreFriendsServer",
     "dartPath": "D:/workspace/practice/we_are_friends_app/lib/model",
     "applicationName": "we_are_friends",
+    "serverUri": "http://alex.nsgsoft.ru:5078",
     "controller": [
       {
         "apiPrefix": "Api",
