@@ -36,7 +36,7 @@ class EventsPage extends GetView<EventsController> {
                   },
                   icon2: Icons.check,
                   onPressed2: () {
-                    controller.itemPageCancel();
+                    controller.itemPagePost();
                   },
                 ),
                 Expanded(

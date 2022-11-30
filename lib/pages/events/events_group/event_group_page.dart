@@ -34,7 +34,7 @@ class EventsGroupPage extends GetView<EventGroupController> {
                   },
                   icon2: Icons.check,
                   onPressed2: () {
-                    controller.itemPageCancel();
+                    controller.itemPagePost();
                   },
                 ),
                 Expanded(

@@ -35,7 +35,7 @@ class DataControllerGenerated extends NsgBaseController {
     provider!.token = '66666666666';
     provider!.isAnonymous = false;
     var db = NsgLocalDb.instance;
-    await db.init('we_are_friends');
+    await db.init('we_are_friends_1');
     await provider!.connect(this);
 
     super.onInit();
